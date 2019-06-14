@@ -1,0 +1,44 @@
+.prev_img{
+    object-fit: cover;
+    height: 180px;
+    width:100%;
+}
+.name_block{
+    font-size: 26px;
+    text-align:center
+}
+.delete_category{
+    color:red;
+    padding-right: 15px;
+    display:inline-block;
+}
+.delete_category:hover{
+    transform:scale(1.2);
+    color:red;
+    text-decoration:none;
+}
+.edit_category{
+    display:inline-block;
+}
+.edit_category:hover{
+    color: blue;
+    transform:scale(1.2);
+}
+
+.input-search{
+    width:93%;
+    display:inline-block;
+}
+.input-search:focus{
+    outline: none;
+    border: none;
+    box-shadow: none !important;
+}
+.button-search{
+    display:inline-block;
+    border-radius:0;
+}
+.search-head{
+    margin-top:20px;
+    margin-bottom:20px;
+}

@@ -1,0 +1,42 @@
+{% extends  'blog/base.html' %}
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <h1 class="text-center">
+                {% if error %}
+                    {{error}}
+                {%else%}
+                    Вот что найдено по вашему запросу
+                {% endif %}
+            </h1>
+        </div>
+        <div class="col-xl-12">
+            <div class="row">
+                {#Цикл#}
+                {% for article in articles %}
+                <div class="col-xl-4 mt-5 d-flex w-100">
+                    <div class="card-group">
+                        <div class="card d-flex ">
+                            <img class="card-img-top" src="{{article.prev_img.url}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><a
+                                        href="{% url 'detail_article_url' article_slug=article.slug category_slug=article.category%}">{{article.name}}</a>
+                                </h5>
+                                {% autoescape off %}
+                                <p class="card-text">{{article.prev_text}}</p>
+                                {% endautoescape %}
+                            </div>
+<!--                            <div class="card-footer d-none">-->
+<!--                                <small class="text-muted">Last updated 3 mins ago</small>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {#Цикл#}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
